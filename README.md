@@ -3,11 +3,8 @@
 Bu proje; PC donanım verilerini Libre Hardware Monitor üzerinden çekip, bir Python scripti vasıtasıyla işleyen ve ESP32 kontrolcüsüne bağlı ILI9341 TFT ekrana aktaran bir sistemdir.
 
 1. Donanım Hazırlığı ve Bağlantılar
-Piyasada sıkça bulunan ESP32 Wroom 32D kartınla (VSPI hattı kullanarak) en yüksek performansı aldık:
-
-VCC: 3.3V / GND: GND.
-SCK: GPIO 18 / MOSI: GPIO 23.
-CS: GPIO 5 / DC: GPIO 2 / RST: GPIO 4.
+Piyasada sıkça bulunan ESP32 Wroom 32D kartı ile ILI9341 2.8" TFT ekranı kullanıp, (VSPI hattı kullanarak) en yüksek performansı aldık:
+MOSI 23,SCLK 18,CS 5 ,DC 2  
 
 2. ESP32 & TFT_eSPI Kütüphane Ayarları
 Arduino IDE üzerinde en kritik adım TFT_eSPI Kütüphanesinin User_Setup.h dosyasını düzenlemekti çünkü ekran ile ESP32 arasındaki pin tanımlamaları bu dosyalada yapılıyor.

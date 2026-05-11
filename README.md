@@ -28,3 +28,30 @@ Başlangıç (Startup): Bu VBS dosyası shell:startup klasörüne atılarak sist
 ✅ Sonuç
 Şu an kasanın içinde; işlemci sıcaklığından internet hızına kadar her şeyi anlık gösteren, TechHane yapımı, tamamen otomatik ve profesyonel bir panelin var.
 
+🚀 Project Summary: TechHane PC Status Monitor
+This project is a system that pulls PC hardware data via Libre Hardware Monitor, processes it through a Python script, and transmits it to an ILI9341 TFT display connected to an ESP32 controller.
+
+1.Hardware Preparation and Connections
+Using the widely available ESP32 Wroom 32D board and an ILI9341 2.8" TFT display, we achieved peak performance by utilizing the VSPI line:
+MOSI: 23 SCLK: 18 CS: 5 DC: 2
+
+2.ESP32 & TFT_eSPI Library Settings
+The most critical step in the Arduino IDE was editing the User_Setup.h file of the TFT_eSPI library, as the pin definitions between the display and the ESP32 are configured within these files.
+
+3.PC Side: Libre Hardware Monitor (LHM) (Version 0.9.6)
+We configured the software that serves as the data source:
+Remote Web Server: Activated to enable data broadcasting at localhost:8085/data.json.
+
+4.Python Software (The Bridge)
+The kasa_monitor.py script was developed to facilitate communication between the PC and the ESP32:
+Libraries: requests (to pull JSON data) and pyserial (to send data to the ESP32) were installed.
+Data Processing: The complex JSON data from LHM was parsed, decimal points were formatted (clean_one_decimal), and the data was compiled into a single packet.
+
+5. Automation and Background Operation
+The system was configured to run automatically upon PC startup:
+Batch File (baslat.bat): A command file was created to run the Python code in the correct directory.
+VBS Script (baslat_gizli.vbs): A tool was added to hide the black terminal window and launch the code in "ghost mode."
+Startup: This VBS file was placed in the shell:startup folder to ensure the system activates automatically every time the computer boots up.
+
+✅ Result
+You now have a fully automated, professional, TechHane-made panel inside your case that displays everything from CPU temperature to internet speed in real-time.

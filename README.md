@@ -1,3 +1,4 @@
+<img width="4284" height="5712" alt="IMG_4113" src="https://github.com/user-attachments/assets/d1bc2a0d-2064-42c9-a44a-27f79a393299" />
 # PC-Stat-Monitor-ESP32
 🚀 Proje Özeti: TechHane PC Status Monitor
 Bu proje; PC donanım verilerini Libre Hardware Monitor üzerinden çekip, bir Python scripti vasıtasıyla işleyen ve ESP32 kontrolcüsüne bağlı ILI9341 TFT ekrana aktaran bir sistemdir.
